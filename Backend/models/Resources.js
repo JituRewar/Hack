@@ -4,9 +4,13 @@ const resourceSchema = new mongoose.Schema({
   name: String,
   type: String,
   description: String,
-  availability: {
+  available: {
     type: Boolean,
     default: true
+  },
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
   }
 }, { timestamps: true });
 
